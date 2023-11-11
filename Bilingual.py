@@ -5,11 +5,13 @@ import time
 import g4f
 import random
 from googletranslatepy import Translator
+import baidu_translate_spider_api as baidu_translator
 translator = Translator(proxies='http://127.0.0.1:7890')
 def translate(sentence):
     while True:
         try:
-            text = translator.translate(sentence)
+            # text = translator.translate(sentence)
+            text = baidu_translator.baidutrans(sentence)
             break
         except Exception as e:
             print(e)
